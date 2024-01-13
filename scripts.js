@@ -1,1 +1,1 @@
-
+alert("Can't stop");
