@@ -120,8 +120,8 @@
       var rata = $("#text1").val()*0.01;
       var netto = price * rata;
       var brutto = netto * 1.27;
-      var min = brutto * 0.2;
-      var max = brutto * 0.3;
+      var min = netto * 0.2;
+      var max = netto * 0.3;
       $("#text2").attr("value",Math.round(netto));
       $("#text3").attr("value",Math.round(brutto));
       $("#text4").attr("value",Math.round(min));
