@@ -1,0 +1,9 @@
+{
+  short_name": "Kárátalány kalkulátor",
+  "name": "OTP IP kárátalány kalkulátor",
+  "icons": [
+    { "src": "favicon.svg", "type": "image/png", "sizes": "192x192" },
+    { "src": "favicon.svg", "type": "image/png", "sizes": "512x512" }
+  ],
+"display": "standalone"
+}
