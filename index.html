@@ -43,7 +43,7 @@
                 <input id="text" name="text" type="text" class="form-control" required="required"> 
                 <div class="input-group-append">
                   <div class="input-group-text">
-                    <i class="fa fa-paste mx-3"></i>
+                    Ft
                   </div>
                 </div>
               </div>
@@ -54,7 +54,7 @@
             <label for="text1" class="col-4 col-form-label">Megbízási díj mértéke:</label> 
             <div class="col-8">
               <div class="input-group">
-                <input id="text1" name="text1" value="4" type="text" class="form-control" required="required">
+                <input id="text1" name="text1" value="4" type="number" class="form-control" required="required" step=".1">
                 <div class="input-group-append">
                   <div class="input-group-text">%</div>
                 </div>
@@ -129,12 +129,13 @@
       var brutto = netto * 1.27;
       var min = netto * 0.2;
       var max = netto * 0.3;
-      $("#text2").attr("value",Math.round(netto));
-      $("#text3").attr("value",Math.round(brutto));
-      $("#text4").attr("value",Math.round(min));
-      $("#text5").attr("value",Math.round(max));
+      $("#text2").val(Math.round(netto));
+      $("#text3").val(Math.round(brutto));
+      $("#text4").val(Math.round(min));
+      $("#text5").val(Math.round(max));
     });
 
+    //Kárátalány MAX másolása
     function copyMin() {
         // Get the text field
         var copyText = document.getElementById("text4");
@@ -150,6 +151,7 @@
         alert("Kárátalány MIN vágólapra másolva: " + copyText.value);
       }
 
+      //Kárátalány MAX másolása
       function copyMax() {
         // Get the text field
         var copyText = document.getElementById("text5");
@@ -164,6 +166,7 @@
         // Alert the copied text
         alert("Kárátalány MAX vágólapra másolva: " + copyText.value);
       }
+
   </script>
 </body>
 </html>
