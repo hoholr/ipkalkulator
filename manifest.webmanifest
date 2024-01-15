@@ -1,6 +1,12 @@
 {
   "short_name": "Kárátalány kalkulátor",
   "name": "OTP IP kárátalány kalkulátor",
+  "theme_color": "#62a53c",
+  "background_color": "#62a53c",
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "https://hoholr.github.io/ipkalkulator/",
   "icons": [
     { "src": "favicon.svg", "type": "image/png", "sizes": "192x192" },
     { "src": "favicon.svg", "type": "image/png", "sizes": "512x512" }
