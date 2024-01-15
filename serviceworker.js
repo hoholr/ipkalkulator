@@ -1,6 +1,6 @@
 const staticCacheName = 'ip-kalk';
 const assets = [
-  '/index.php',
+  'index.html',
   'favicon.svg',
   ];
 
