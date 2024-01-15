@@ -126,7 +126,7 @@
   <script src="scripts.js"></script>
   <script type="text/javascript">
     $("#text,#text1").keyup(function(){
-      var price = $(this).val();
+      var price = $("#text").val();
       var rata = $("#text1").val()*0.01;
       var netto = price * rata;
       var brutto = netto * 1.27;
