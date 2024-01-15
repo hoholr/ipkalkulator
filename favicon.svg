@@ -1,9 +1,45 @@
-<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1596 1596" width="1596" height="1596">
-	<title>Otp_bank_Logo-svg</title>
-	<style>
-		.s0 { fill: #6ec72d } 
-		.s1 { fill: #00674c } 
-	</style>
-	<ellipse id="path13616" class="s0" cx="799.9" cy="798.2" rx="353.7" ry="353.9"/>
-	<path id="path13620" fill-rule="evenodd" class="s1" d="m0.6 798.2c0-440.3 356.5-797.2 796.5-797.7v288.2c-280.9 0.5-508.4 228.4-508.4 509.5 0 281.4 228 509.4 509.3 509.4 279.6 0 509.3-225.9 509.3-511.3l288.2 0.1c0 442.3-357 799.4-797.5 799.4-440.4 0-797.4-357.1-797.4-797.6zm1247.4-245.4c-112.1 0-202.7-90.7-202.7-202.8 0-112.2 90.6-202.8 202.7-202.8 112.1 0 202.8 90.6 202.8 202.8 0 112.1-90.7 202.8-202.8 202.8z"/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+
+<svg
+   width="403"
+   height="403"
+   viewBox="0 0 12.09 12.09"
+   fill="none"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="house-building-svgrepo-com.svg"
+   inkscape:version="1.3.2 (1:1.3.2+202311252150+091e20ef0f)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.6725"
+     inkscape:cx="398.51301"
+     inkscape:cy="400"
+     inkscape:window-width="1366"
+     inkscape:window-height="729"
+     inkscape:window-x="0"
+     inkscape:window-y="21"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+  <path
+     d="M 4.962371,3.6100605 V 2.9066912 c 0,-0.6060338 0,-0.9090561 0.1179861,-1.1405296 C 5.1841082,1.5625471 5.3497202,1.3970064 5.5533802,1.2932649 5.784913,1.1753202 6.0880488,1.1753202 6.6942662,1.1753202 h 2.4895993 c 0.6062175,0 0.9093535,0 1.1408865,0.1179447 0.203659,0.1037418 0.369272,0.2692822 0.473023,0.4728967 0.117986,0.2314735 0.117986,0.5344958 0.117986,1.1405296 v 6.2762184 c 0,0.6060338 0,0.9090774 -0.117986,1.1405404 -0.103751,0.203598 -0.269364,0.369161 -0.473023,0.47288 -0.231533,0.11795 -0.534669,0.11795 -1.1408865,0.11795 H 8.2096745 M 7.1272399,3.3395338 H 8.7508917 M 7.1272399,5.5037472 H 8.7508917 M 1.1738503,8.2090136 3.5680439,6.0331137 c 0.2057058,-0.1869339 0.3085587,-0.280428 0.4250828,-0.3158129 0.1026249,-0.031218 0.2122112,-0.031218 0.3148368,0 0.1165243,0.035385 0.2193771,0.1288788 0.425083,0.3158129 L 7.1272399,8.2090136 M 2.2562848,7.2252704 v 2.8233246 c 0,0.303044 0,0.454539 0.058987,0.57027 0.051892,0.101826 0.1346879,0.184553 0.2365228,0.23644 0.1157725,0.05898 0.2673288,0.05898 0.5704376,0.05898 h 2.0566255 c 0.3031358,0 0.4546765,0 0.5704429,-0.05898 0.1018564,-0.05189 0.1846093,-0.134614 0.236512,-0.23644 0.058993,-0.115731 0.058993,-0.267226 0.058993,-0.57027 V 7.2252704"
+     stroke="#000000"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path1"
+     style="stroke:#ffffff;stroke-width:0.43701;stroke-dasharray:none" />
 </svg>
