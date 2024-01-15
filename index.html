@@ -170,6 +170,20 @@
         alert("Kárátalány MAX vágólapra másolva: " + copyText.value);
       }
 
+    if ('serviceWorker' in navigator) {
+       navigator.serviceWorker.register("serviceworker.js");
+    }
+    
+    const urlsToCache = ["/"];
+    self.addEventListener("install", (event) => {
+       event.waitUntil(async () => {
+          const cache = await caches.open("pwa-assets");
+          return cache.addAll(urlsToCache);
+       });
+    });
+
+    console.log('minden feladat végrehajtva');
+
   </script>
 </body>
 </html>
