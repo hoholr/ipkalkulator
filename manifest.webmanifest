@@ -1,8 +1,8 @@
 {
   "short_name": "Kárátalány kalkulátor",
   "name": "THN-Tamus Kft. kárátalány kalkulátor",
-  "theme_color": "#62a53c",
-  "background_color": "#ffffff",
+  "theme_color": "#333333",
+  "background_color": "#333333",
   "display": "fullscreen",
   "orientation": "portrait",
   "scope": "/",
