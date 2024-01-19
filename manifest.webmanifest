@@ -13,5 +13,5 @@
     { "src": "favicon.svg", "type": "image/png", "sizes": "512x512" }
   ],
   "display": "fullscreen",
-  "version": "0.1",
+  "version": "0.1"
 }
