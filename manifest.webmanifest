@@ -1,6 +1,6 @@
 {
-  "short_name": "Ingatlan kalkulátorok",
-  "name": "THN-Tamus Kft. ingatlan kalkulátorok",
+  "short_name": "Ingatlankalkulátor",
+  "name": "THN-Tamus Kft.- Ingatlankalkulátor",
   "theme_color": "#ffffff",
   "background_color": "#ffffff",
   "display": "fullscreen",
@@ -8,8 +8,8 @@
   "scope": "/",
   "start_url": "https://hoholr.github.io/ipkalkulator/",
   "icons": [
-    { "src": "favicon.svg", "type": "image/png", "sizes": "192x192" },
-    { "src": "favicon.svg", "type": "image/png", "sizes": "512x512" }
+    { "src": "appicon.svg", "type": "image/png", "sizes": "192x192" },
+    { "src": "appicon.svg", "type": "image/png", "sizes": "512x512" }
   ],
 "display": "fullscreen"
 }
