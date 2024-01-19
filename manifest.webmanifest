@@ -12,6 +12,5 @@
     { "src": "favicon.svg", "type": "image/png", "sizes": "192x192" },
     { "src": "favicon.svg", "type": "image/png", "sizes": "512x512" }
   ],
-  "display": "fullscreen",
-  "version": "0.1"
+  "display": "fullscreen"
 }
