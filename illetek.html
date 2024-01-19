@@ -153,7 +153,7 @@
             <label for="adoAlap" class="col-5 col-md-4 col-form-label">Az adózás alapja:</label> 
             <div class="col-7 col-md-8">
               <div class="input-group">
-                <input id="adoAlap" name="adoAlap" disabled="disabled" type="text" class="form-control" required="required">
+                <input id="adoAlap" name="adoAlap" disabled="disabled" type="text" class="form-control" required="required" data-toggle="tooltip" data-placement="top" title="">
                 <div class="input-group-append">
                   <div class="input-group-text">Ft</div>
                 </div>
@@ -185,7 +185,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   <script src="scripts.js"></script>
   <script type="text/javascript">
-    $("input").keyup(function(){
+    $("input").on('keyup click', function(){
       console.clear();
       var tulajdoniHanyad = $("#tulajdoniHanyad").val()*0.01;
       var eladasiAr = $("#eladasiAr").val();
@@ -208,7 +208,7 @@
       console.log("a költségekkel korrigált haszon a tulajdoni hányad arányában " + (tulajdoniHanyad * korrigaltArres) + " Ft");
       console.log("az adóalap " + (tulajdoniHanyad * korrigaltArres * adoAlap) + " Ft");
       if((tulajdoniHanyad * korrigaltArres * adoAlap) >= 0){
-        $("#adoAlap").val(Math.round(tulajdoniHanyad * korrigaltArres * adoAlap));
+        $("#adoAlap").val(Math.round(tulajdoniHanyad * korrigaltArres * adoAlap)).attr('data-original-title',(tulajdoniHanyad * korrigaltArres)+' Ft költség elszámolásával váltható ki');
       } else {
         $("#adoAlap").val("0");
       }
