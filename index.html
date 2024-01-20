@@ -46,6 +46,9 @@
                 <li class="nav-item">
                   <a class="nav-link h5" href="ingatlanado.html">INGATLANADÓ</a>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link h5" href="vagyonszerzes.html">VAGYONSZERZÉS</a>
+                </li>
               </ul>
             </div>
           </nav>
@@ -114,8 +117,8 @@
             <div class="col-8">
               <div class="input-group">
                 <input id="text5" name="text5" type="text" value="0" disabled class="form-control">
-                <div class="input-group-append" onclick="copyMax()">
-                  <div class="input-group-text">Ft <i class="bi bi-copy ml-3"></i></div>
+                <div class="input-group-append">
+                  <div class="input-group-text">Ft</div>
                 </div>
               </div>
             </div>
@@ -126,8 +129,8 @@
             <div class="col-8">
               <div class="input-group">
                 <input id="text4" name="text4" type="text" value="0" disabled class="form-control">
-                <div class="input-group-append" onclick="copyMin()">
-                  <div class="input-group-text">Ft <i class="bi bi-copy ml-3"></i></div>
+                <div class="input-group-append">
+                  <div class="input-group-text">Ft</div>
                 </div>
               </div>
             </div>
@@ -152,10 +155,10 @@
       var brutto = netto * 1.27;
       var min = netto * 0.2;
       var max = netto * 0.3;
-      $("#text2").val(Math.round(netto));
-      $("#text3").val(Math.round(brutto));
-      $("#text4").val(Math.round(min));
-      $("#text5").val(Math.round(max));
+      $("#text2").val(Math.round(netto).toLocaleString());
+      $("#text3").val(Math.round(brutto).toLocaleString());
+      $("#text4").val(Math.round(min).toLocaleString());
+      $("#text5").val(Math.round(max).toLocaleString());
     });
 
     //Kárátalány MAX másolása

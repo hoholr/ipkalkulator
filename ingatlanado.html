@@ -46,6 +46,9 @@
                 <li class="nav-item active">
                   <a class="nav-link h5" href="ingatlanado.html">INGATLANADÓ</a>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link h5" href="vagyonszerzes.html">VAGYONSZERZÉS</a>
+                </li>
               </ul>
             </div>
           </nav>
@@ -208,12 +211,12 @@
       console.log("a költségekkel korrigált haszon a tulajdoni hányad arányában " + (tulajdoniHanyad * korrigaltArres) + " Ft");
       console.log("az adóalap " + (tulajdoniHanyad * korrigaltArres * adoAlap) + " Ft");
       if((tulajdoniHanyad * korrigaltArres * adoAlap) >= 0){
-        $("#adoAlap").val(Math.round(tulajdoniHanyad * korrigaltArres * adoAlap)).attr('data-original-title',(tulajdoniHanyad * korrigaltArres)+' Ft költség elszámolásával váltható ki');
+        $("#adoAlap").val(Math.round(tulajdoniHanyad * korrigaltArres * adoAlap).toLocaleString()).attr('data-original-title',(tulajdoniHanyad * korrigaltArres)+' Ft költség elszámolásával váltható ki');
       } else {
         $("#adoAlap").val("0");
       }
       if(fizetendoIngatlanado >= 0){
-        $("#fizetendoIngatlanado").val(Math.round(fizetendoIngatlanado));
+        $("#fizetendoIngatlanado").val(Math.round(fizetendoIngatlanado).toLocaleString());
       } else {
         $("#fizetendoIngatlanado").val("0");
       }
