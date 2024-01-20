@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
+  
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <style type="text/css">
+    .bg-otp{background: #65a943;}
+    .text-otp{color: #333333;}
+    .tooltip-inner {max-width: 350px;}
+  </style>
+
+  <title>THN-TAMUS Kft. - ingatlan kalkulátorok</title>
+</head>
+
+<body>
+
+<div class="container-fluid bg-otp mb-5">
+    <div class="row">
+      <div class="container">
+          <div class="row">
+          <nav class="col-12 navbar navbar-dark text-light">
+            <div class="navbar-brand d-flex col-9 px-0">
+              <img src="favicon.png" class="my-auto" style="max-width: 80px;">
+              <div class="h5 my-auto ml-3 text-light">VAGYONSZERZÉSI ILLETÉK <br class="d-md-none">KALKULÁTOR</div>
+            </div>
+        
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto text-center">
+                <li class="nav-item">
+                  <a class="nav-link h5" href="index.html">KÁRÁTALÁNY</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link h5" href="ingatlanado.html">INGATLANADÓ</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link h5" href="vagyonszerzes.html">VAGYONSZERZÉS</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          </div>
+        </div>
+      </div>
+  </div>
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <form>
+          
+          <div class="form-group row">
+            <label for="vetelAr" class="col-5 col-md-3 col-form-label">Vételár:</label> 
+            <div class="col-7 col-md-3 mb-3">
+              <div class="input-group">
+                <input id="vetelAr" name="vetelAr" type="number" class="form-control" required="required">
+                <div class="input-group-append">
+                  <div class="input-group-text">Ft</div>
+                </div>
+              </div>
+            </div>
+            <label for="eladottAra" class="col-5 col-md-3 col-form-label"><div id="sinceYear" class="d-inline"></div> óta eladott ingatlan ára:</label> 
+            <div class="col-7 col-md-3 mb-3">
+              <div class="input-group">
+                <input id="eladottAra" name="eladottAra" type="number" class="form-control" required="required">
+                <div class="input-group-append">
+                  <div class="input-group-text">Ft</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <div class="col-6 col-md-3">
+              <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" id="onkormanyzati">
+                <label class="custom-control-label" for="onkormanyzati">Önkormányzati/állami</label>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" id="ujepitesu">
+                <label class="custom-control-label" for="ujepitesu">Újépítésű</label>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="custom-control custom-switch" data-toggle="tooltip">
+                <input type="checkbox" class="custom-control-input" id="nincs35">
+                <label class="custom-control-label" for="nincs35">A vevő 35 évnél fiatalabb és első lakása</label>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" id="CSOKos">
+                <label class="custom-control-label" for="CSOKos">CSOK-ot igényel</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="fizetendoIlletek" class="col-5 col-md-4 col-form-label">Fizetendő illeték:</label> 
+            <div class="col-7 col-md-8">
+              <div class="input-group">
+                <input id="fizetendoIlletek" name="fizetendoIlletek" disabled="disabled" type="text" class="form-control" required="required">
+                <div class="input-group-append">
+                  <div class="input-group-text">Ft</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="onkormanyzatiInfo" class="form-group row d-none mb-0">
+            <div class="alert alert-success col-12">Önkormányzati, vagy állami tulajdonú lakás/ház vásárlása esetén nincs illetékfizetési kötelezettség</div>
+          </div>
+
+          <div id="eladInfo" class="form-group row d-none mb-0">
+            <div class="alert alert-success col-12">Amennyiben az ingatlan vásárlását követő egy éven belül a tulajdonos egy MÁSIK ingatlant ad el, annak az értéke csökkenti a vagyonszerzési illetéket, visszaigényelhető</div>
+          </div>
+
+          <div id="ujepitesuInfo" class="form-group row d-none mb-0">
+            <div class="alert alert-success col-12">Az újépítésű ingatlan 15 mFt-ig illetékmentes</div>
+          </div>
+
+          <div id="ujepitesuInfoDraga" class="form-group row d-none mb-0">
+            <div class="alert alert-warning col-12">Az újépítésű ingatlan vásárlása kizárólag 15 mFt-ig illetékmentes, efölött az illeték alapja 15 mFt-tal csökken.</div>
+          </div>
+
+          <div id="nincs35Info" class="form-group row d-none mb-0">
+            <div class="alert alert-success col-12">35 éven aluli vevő első ingatlan esetében, 15 mFt-os vételárig 50%-os kedvezmény élvez</div>
+          </div>
+
+          <div id="nincs35InfoDraga" class="form-group row d-none mb-0">
+            <div class="alert alert-warning col-12">35 éven aluli vevő első ingatlan esetében, kizárólag 15 mFt-ig vételárig kedvezményes</div>
+          </div>
+
+          <div id="csokInfo" class="form-group row d-none mb-0">
+            <div class="alert alert-success col-12">CSOK igénybevétele esetén illetékmentességet élvez</div>
+          </div>
+
+          <div id="maxInfo" class="form-group row d-none">
+            <div class="alert alert-success col-12">A vagyonszerzési illeték maximális összege 200 mFt</div>
+          </div>
+
+           
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="scripts.js"></script>
+  <script type="text/javascript">
+
+    var Y = new Date();
+    Y = Y.getFullYear();
+    $("#sinceYear").html(Y - 3);
+
+    $(".custom-control-input").click(function(){
+      calculate();
+    });
+
+    $("input").on('keyup click', function(){
+      calculate();
+    });
+
+    function calculate(){
+
+      console.clear();
+      
+      var vetelAr = $("#vetelAr").val();
+      var eladottAra = $("#eladottAra").val();
+
+      vetelAr = vetelAr - eladottAra;
+
+      if (eladottAra > 0){
+        $("#nincs35").attr("disabled","disabled");
+        $("#nincs35").parent(".custom-control.custom-switch").attr("data-original-title","Kizárólag első lakás vásárlása esetén igényelhető");
+      } else {
+        $("#nincs35").removeAttr("disabled","disabled");
+        $("#nincs35").parent(".custom-control.custom-switch").removeAttr("data-original-title");
+      }
+
+      if( $('#ujepitesu').is(':checked') && vetelAr <= 15000000 ){
+        vetelAr = 0;
+        $("#ujepitesuInfo").removeClass("d-none");
+        $("#ujepitesuInfoDraga").addClass("d-none");
+      } else if ( $('#ujepitesu').is(':checked') && vetelAr > 15000000 ) {
+        vetelAr = vetelAr - 15000000;
+        $("#ujepitesuInfo").addClass("d-none");
+        $("#ujepitesuInfoDraga").removeClass("d-none");
+      } else {
+        $("#ujepitesuInfo").addClass("d-none");        
+      }
+
+      if(vetelAr >= 1000000000){
+        fizetendoIlletek = (1000000000 * 0.04) + ((vetelAr - 1000000000) * 0.02);
+      } else {
+        fizetendoIlletek = vetelAr * 0.04;
+      }
+      
+      console.log(vetelAr);
+      
+      if(fizetendoIlletek >= 200000000){
+        fizetendoIlletek = "200000000";
+        $("#maxInfo").removeClass("d-none");
+      } else {
+        $("#maxInfo").addClass("d-none");        
+      }
+      
+      if($('#onkormanyzati').is(':checked')){
+        fizetendoIlletek = 0;
+        $("#onkormanyzatiInfo").removeClass("d-none");
+        $("#maxInfo").addClass("d-none");
+      } else {
+        $("#onkormanyzatiInfo").addClass("d-none");
+      }
+
+      if( $('#nincs35').is(':checked') && vetelAr <= 15000000 ){
+        fizetendoIlletek = fizetendoIlletek / 2;
+        $("#nincs35Info").removeClass("d-none");
+        $("#nincs35InfoDraga").addClass("d-none");
+      } else if( $('#nincs35').is(':checked') && vetelAr > 15000000 ) {
+        $("#nincs35Info").addClass("d-none");
+        $("#nincs35InfoDraga").removeClass("d-none");
+      } else {
+        $("#nincs35Info").addClass("d-none");        
+      }
+
+      if( $('#CSOKos').is(':checked') ){
+        fizetendoIlletek = 0;
+        $("#csokInfo").removeClass("d-none");
+        $("#maxInfo").addClass("d-none");
+      } else {
+        $("#csokInfo").addClass("d-none");
+      }
+
+      console.log(fizetendoIlletek);
+
+      if(fizetendoIlletek < 0){
+        fizetendoIlletek = 0;
+      }
+
+      fizetendoIlletek = Math.round(fizetendoIlletek).toLocaleString();
+      $("#fizetendoIlletek").val(fizetendoIlletek);
+
+    };
+
+    
+    if ('serviceWorker' in navigator) {
+       navigator.serviceWorker.register("serviceworker.js");
+    }
+    
+    var urlsToCache = ["/"];
+    self.addEventListener("install", (event) => {
+       event.waitUntil(async () => {
+          var cache = await caches.open("pwa-assets");
+          return cache.addAll(urlsToCache);
+       });
+    });
+
+    console.log('minden feladat végrehajtva');
+
+  </script>
+</body>
+</html>
