@@ -77,7 +77,7 @@
           </div>
 
           <div class="form-group row">
-            <label for="text1" class="col-4 col-form-label">Megbízási díj mértéke:</label> 
+            <label for="text1" class="col-4 col-form-label font-weight-bold">Megbízási díj mértéke:</label> 
             <div class="col-8">
               <div class="input-group">
                 <input id="text1" name="text1" value="4" type="number" class="form-control" required="required" step=".1">
@@ -89,7 +89,7 @@
           </div>
 
           <div class="form-group row">
-            <label for="text2" class="col-4 col-form-label">Megbízási díj nettó:</label> 
+            <label for="text2" class="col-4 col-form-label font-weight-bold">Megbízási díj nettó:</label> 
             <div class="col-8">
               <div class="input-group">
                 <input id="text2" name="text2" type="text" value="0" disabled class="form-control">
@@ -97,11 +97,12 @@
                   <div class="input-group-text">Ft</div>
                 </div>
               </div>
+              <div id="text2Alert" class="small text-danger d-none">A nettó megbízási díj nem éri el a minimális 400.000 Ft-ot!</div>
             </div>
           </div>
 
           <div class="form-group row">
-            <label for="text3" class="col-4 col-form-label">Megbízási díj bruttó:</label> 
+            <label for="text3" class="col-4 col-form-label font-weight-bold">Megbízási díj bruttó:</label> 
             <div class="col-8">
               <div class="input-group">
                 <input id="text3" name="text3" type="text" value="0" disabled class="form-control">
@@ -111,29 +112,32 @@
               </div>
             </div>
           </div>
-          
+
           <div class="form-group row">
-            <label for="text5" class="col-4 col-form-label font-weight-bold text-otp">Kárátalány MAX:</label> 
+            <label for="text3" class="col-4 col-form-label font-weight-bold">Megbízónál marad:</label> 
             <div class="col-8">
               <div class="input-group">
-                <input id="text5" name="text5" type="text" value="0" disabled class="form-control">
+                <input id="textMarad" name="text3" type="text" value="0" disabled class="form-control">
                 <div class="input-group-append">
                   <div class="input-group-text">Ft</div>
                 </div>
               </div>
             </div>
           </div>
-
+          
           <div class="form-group row">
-            <label for="text4" class="col-4 col-form-label font-weight-bold text-otp">Kárátalány MIN:</label> 
+            <label for="text6" class="col-4 col-form-label font-weight-bold text-otp">Átalánydíj:</label> 
             <div class="col-8">
               <div class="input-group">
-                <input id="text4" name="text4" type="text" value="0" disabled class="form-control">
+                <input id="text6" name="text6" type="text" value="0" disabled class="form-control">
                 <div class="input-group-append">
                   <div class="input-group-text">Ft</div>
                 </div>
               </div>
+              <div class="small"><div id="text4" class="d-inline">0</div> Ft - <div id="text5" class="d-inline">0</div> Ft<span id="text6Alert" class="text-danger d-none"><br>Az átalánydíj nem éri el a minimális 200.000 Ft-ot!</span></div> 
             </div>
+          </div>
+
           </div>
            
         </form>
@@ -151,47 +155,41 @@
     $("#text,#text1").keyup(function(){
       var price = $("#text").val();
       var rata = $("#text1").val()*0.01;
-      var netto = price * rata;
+      
+      let netto;
+
+      if( (price * rata)>400000 || (price * rata)===0 ){
+          netto = price * rata;
+          $("#text2.text-danger, #text3.text-danger").removeClass("text-danger");
+          $("#text2Alert").addClass("d-none");
+        } else {
+          netto = 400000;
+          $("#text2, #text3").not(".text-danger").addClass("text-danger").tooltip('show');
+          $("#text2Alert").removeClass("d-none");
+        }
+
       var brutto = netto * 1.27;
+      let marad = price - brutto;
       var min = netto * 0.2;
       var max = netto * 0.3;
+      var min = netto * 0.2;
+      var text6 = ( min + max ) / 2;
+
+      if( text6 > 200000 || text6 === 0 ){
+        text6 = ( min + max ) / 2;
+          $("#text6Alert").addClass("d-none");
+      } else {
+        text6 = 200000;        
+          $("#text6Alert").removeClass("d-none");
+      }
+
       $("#text2").val(Math.round(netto).toLocaleString());
       $("#text3").val(Math.round(brutto).toLocaleString());
-      $("#text4").val(Math.round(min).toLocaleString());
-      $("#text5").val(Math.round(max).toLocaleString());
+      $("#textMarad").val(Math.round(marad).toLocaleString());
+      $("#text4").text(Math.round(min).toLocaleString());
+      $("#text5").text(Math.round(max).toLocaleString());
+      $("#text6").val(Math.round(text6).toLocaleString());
     });
-
-    //Kárátalány MAX másolása
-    function copyMin() {
-        // Get the text field
-        var copyText = document.getElementById("text4");
-
-        // Select the text field
-        copyText.select();
-        copyText.setSelectionRange(0, 99999); // For mobile devices
-
-         // Copy the text inside the text field
-        navigator.clipboard.writeText(copyText.value);
-
-        // Alert the copied text
-        alert("Kárátalány MIN vágólapra másolva: " + copyText.value);
-      }
-
-      //Kárátalány MAX másolása
-      function copyMax() {
-        // Get the text field
-        var copyText = document.getElementById("text5");
-
-        // Select the text field
-        copyText.select();
-        copyText.setSelectionRange(0, 99999); // For mobile devices
-
-         // Copy the text inside the text field
-        navigator.clipboard.writeText(copyText.value);
-
-        // Alert the copied text
-        alert("Kárátalány MAX vágólapra másolva: " + copyText.value);
-      }
 
     if ('serviceWorker' in navigator) {
        navigator.serviceWorker.register("serviceworker.js");
